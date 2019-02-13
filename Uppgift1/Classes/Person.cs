@@ -10,9 +10,8 @@ namespace Uppgift1
         public int Age { get; }
         public int Candies { get; set; }
         public DateTime DateAdded { get; } = DateTime.Now;
-        public string FullName => $"{FirstName} {LastName}";
 
-        public Person(int age, String firstName, String lastName)
+        public Person(int age, string firstName, string lastName)
         {
             Age = age;
             FirstName = firstName;

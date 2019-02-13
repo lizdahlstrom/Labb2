@@ -62,6 +62,8 @@ namespace Uppgift1
 
         private void CheckBox_SortPeople(object sender, RoutedEventArgs e)
         {
+            if (sortByAge.IsChecked == null)
+                return;
             pHandler.SortPeople((bool)sortByAge.IsChecked);
             UpdateListBox();
         }

@@ -14,7 +14,7 @@ namespace Uppgift1.Classes
             LoadPeople();
         }
 
-        public void LoadPeople()
+        private void LoadPeople()
         {
             People = File.Exists(FileName) ? (List<Person>)FileOperations.Deserialize(FileName) : new List<Person>();
         }
