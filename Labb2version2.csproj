@@ -1,0 +1,511 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3A4E8E71-8610-473D-93A2-465875A90C8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Labb2version2</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll" />
+    <Content Include="packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.pdb" />
+    <Content Include="packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll" />
+    <Content Include="packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.pdb" />
+    <Content Include="packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.XML" />
+    <Content Include="Uppgift1\bin\Debug\Uppgift1.exe" />
+    <Content Include="Uppgift1\bin\Debug\Uppgift1.pdb" />
+    <Content Include="Uppgift1\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="Uppgift1\obj\Debug\Uppgift1.csproj.FileListAbsolute.txt" />
+    <Content Include="Uppgift1\obj\Debug\Uppgift1.exe" />
+    <Content Include="Uppgift1\obj\Debug\Uppgift1.pdb" />
+    <Content Include="Uppgift1\Uppgift1.csproj" />
+    <Content Include="Uppgift2\bin\Debug\MaterialDesignColors.dll" />
+    <Content Include="Uppgift2\bin\Debug\MaterialDesignColors.pdb" />
+    <Content Include="Uppgift2\bin\Debug\MaterialDesignThemes.Wpf.dll" />
+    <Content Include="Uppgift2\bin\Debug\MaterialDesignThemes.Wpf.pdb" />
+    <Content Include="Uppgift2\bin\Debug\MaterialDesignThemes.Wpf.xml" />
+    <Content Include="Uppgift2\bin\Debug\Uppgift2.exe" />
+    <Content Include="Uppgift2\bin\Debug\Uppgift2.pdb" />
+    <Content Include="Uppgift2\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="Uppgift2\obj\Debug\Uppgift2.csproj.FileListAbsolute.txt" />
+    <Content Include="Uppgift2\obj\Debug\Uppgift2.exe" />
+    <Content Include="Uppgift2\obj\Debug\Uppgift2.pdb" />
+    <Content Include="Uppgift2\Uppgift2.csproj" />
+    <Content Include="Uppgift2\Uppgift2.csproj.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\.COMMIT_EDITMSG.swp" />
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\next-index-15324.lock" />
+    <None Include=".git\next-index-16768.lock" />
+    <None Include=".git\objects\00\b4c0412b38253cba697f87685fb5d091c2a24e" />
+    <None Include=".git\objects\01\27830447b36586a8836665d4b8c7af8317c1c0" />
+    <None Include=".git\objects\03\3d7a5e9e2266753180f4e3a9299f575046701e" />
+    <None Include=".git\objects\08\1b7292f4e9c1c243aacbfc81c08de856ac5024" />
+    <None Include=".git\objects\08\e026eb95b0c3ab2a6d4408386fb9825414dfe5" />
+    <None Include=".git\objects\08\f14b18f9200fd5dec00024d854866700bca767" />
+    <None Include=".git\objects\09\a5afd859916433b7e1306505ccaf1bd2de4296" />
+    <None Include=".git\objects\0b\45448138b1cc68164bc70e3a0fb5d21c4cf7a8" />
+    <None Include=".git\objects\10\86db1d749d9c9c18f624bc3d21ff051f6c057e" />
+    <None Include=".git\objects\10\f732c562ad01d3d9c790aa70f1f080c476ea8c" />
+    <None Include=".git\objects\17\7d3da6875446ec02306b871068408dadfb02cc" />
+    <None Include=".git\objects\1a\7ba9cc215611bf81e2969e89debccad8995611" />
+    <None Include=".git\objects\1c\5d8a20d9ce04831bf5cc000c93683dff54fab2" />
+    <None Include=".git\objects\1f\f0c423042b46cb1d617b81efb715defbe8054d" />
+    <None Include=".git\objects\23\0a63b0cd1ec9d66fbfe897dd545cdafe080df2" />
+    <None Include=".git\objects\23\c0698420ef8a5a58d9d75bb4bad0cedaf224b9" />
+    <None Include=".git\objects\28\1f665fa29a4694acf2b9e06493967f2cf67415" />
+    <None Include=".git\objects\28\fb0f76c60e1098495829d5bf0e44650d7a99e6" />
+    <None Include=".git\objects\2c\b6d9e1655fee97fdc9374327caa4dc5eea13c1" />
+    <None Include=".git\objects\2d\cd1ebfc294ee0d411726e13a4a63c86b71598e" />
+    <None Include=".git\objects\2e\95947246d0ee1301b434a51f76e3ff839e882b" />
+    <None Include=".git\objects\2f\d833137f9a337bbbc2fa8e7fbcadfdb3144be7" />
+    <None Include=".git\objects\31\30ee22e5bba0ef2cf5b4a3d36b507c7e97e7a3" />
+    <None Include=".git\objects\35\8db3382b4ad7b3e57397e73357ced842c5e44f" />
+    <None Include=".git\objects\37\e90b663919561a1ba15663884e44c9585dbc79" />
+    <None Include=".git\objects\37\ecebf3f2fc0283f83fad97818e80e5a75b8b87" />
+    <None Include=".git\objects\3a\cb9d3b145931d80a0396c58bde7cc5995d4977" />
+    <None Include=".git\objects\3b\eaf2143a01ada79c869a230971d4195a1a9d3a" />
+    <None Include=".git\objects\3c\4efe206bd0e7230ad0ae8396a3c883c8207906" />
+    <None Include=".git\objects\3d\93ce8a2eb4275065ccb583322f2dcf04061bd2" />
+    <None Include=".git\objects\40\5be19eae8468f689f6489d269f1a63f0fc9095" />
+    <None Include=".git\objects\41\24b816dd743ca5db5740e73f387f981bf13345" />
+    <None Include=".git\objects\41\d49aeb78f36931122d43313d8379312a8c3477" />
+    <None Include=".git\objects\43\7e6c74513caf34595c0bbbd2671f067e6ca645" />
+    <None Include=".git\objects\45\65521ba1e8f059e5a38c3ced85cd92cdbf7981" />
+    <None Include=".git\objects\45\db6539df3c02cba43fdef1272bda004b23d899" />
+    <None Include=".git\objects\46\677b4eab755ccce463c5650858a20104b6c2ab" />
+    <None Include=".git\objects\47\3785662262433a071e545e5a880f4771d444dd" />
+    <None Include=".git\objects\49\b208ab4a6d79fe82d3a231ae0179a9b7ec59e5" />
+    <None Include=".git\objects\4a\9ff40b140e21520133c00538435bd1f7d1dc54" />
+    <None Include=".git\objects\4d\b9e7075d6dc101b0c71f7da3fc15d53124ec77" />
+    <None Include=".git\objects\4e\ab5c79653288f5c0a7694a633c24ee315a1d0e" />
+    <None Include=".git\objects\54\7f3ba9cfb0dfd57f5fb02ca59971cc40ed7b95" />
+    <None Include=".git\objects\56\ba706f5cd384eb652286c204fa90c08fa4b696" />
+    <None Include=".git\objects\59\e4309b1f6fd85c26f2beeeaa82946534ebe9ab" />
+    <None Include=".git\objects\5a\cfd10a69611ae6219389f908cb0717e9907177" />
+    <None Include=".git\objects\5b\d89467a45d12aef27969e7bf33e269e683e77a" />
+    <None Include=".git\objects\65\536e051cfc19a106ab9df45d44aa09dc5de341" />
+    <None Include=".git\objects\67\dc28118b889eb67438975b0c45649071d78e0a" />
+    <None Include=".git\objects\6a\18e60f2fd8cf6e0ba3f7cb9de64544ecf3fac7" />
+    <None Include=".git\objects\6b\81dc57169c9490ff5070ae7a91b900bd4b5f2e" />
+    <None Include=".git\objects\6f\a11cabdf3fc2388d41b7a4a358df69c0ada65d" />
+    <None Include=".git\objects\72\6de4a2de1bb7f1c2085d987f9c51de5a8a9307" />
+    <None Include=".git\objects\73\1f6de6c291e303814b02808f34140fe560e8e4" />
+    <None Include=".git\objects\73\f88386789de1c97929398ebd3e59d2f3237fef" />
+    <None Include=".git\objects\75\b7a166b7a6848aec72e528337c35246b74aece" />
+    <None Include=".git\objects\75\c9122cd61eed479a8e12467b6f8e0f4028fb72" />
+    <None Include=".git\objects\75\e0198e0e1f7a09ad66aa41c2e5352ef0336d32" />
+    <None Include=".git\objects\77\f01a3cc9d8b536940d95c16443b3b9f0ababcd" />
+    <None Include=".git\objects\78\362b72ed370ce0d25fef2de1387cf502023517" />
+    <None Include=".git\objects\7d\b7bddfd65b9ceec14ac917627d6df9939e094c" />
+    <None Include=".git\objects\7e\67f1ff7e604ed3f70538e6d1631ea086eaabcc" />
+    <None Include=".git\objects\86\39b255811839eed2aaecd6d17835fc982b9a38" />
+    <None Include=".git\objects\88\c5eac653c69310e8f3ac6e73551c4d698ea708" />
+    <None Include=".git\objects\89\1634b6231b50abae185dcfca6498fd60c78451" />
+    <None Include=".git\objects\8a\33ec4bd3f033527c36c13cf83a2d124282a2c1" />
+    <None Include=".git\objects\8c\90bea5b982dcfbe06ab92788b3f363991bfc35" />
+    <None Include=".git\objects\8c\f31dbe0dd9fa3b162abbc5952e7d637edd0ef9" />
+    <None Include=".git\objects\8f\1af3bcebedbf67e88790b39eeaf98f9c12b176" />
+    <None Include=".git\objects\8f\8986162aa6bb7e0083ce024e801458f27525de" />
+    <None Include=".git\objects\8f\9a9b463ba618f3211a6740a468656e3f1da22d" />
+    <None Include=".git\objects\91\45c1c3d4474c69ebb4f2efe20525a1a7a8b373" />
+    <None Include=".git\objects\91\c424c805493829cb0ccbe115c5a0c8be8342f6" />
+    <None Include=".git\objects\96\ccf4a5993a3e8d39915e61e2a4a64cb11bd8ac" />
+    <None Include=".git\objects\97\9217e08d4417e76b7a3f8f5a26d7508b7f5a16" />
+    <None Include=".git\objects\9a\737e8d7d0a08fb369162ca7d1da86da0a18278" />
+    <None Include=".git\objects\9b\3f0a7f6b8efc93041dbea8c7d0477ebc38ca8e" />
+    <None Include=".git\objects\9b\aeae5e7aca3ba80a307b3cd5824165ebc164e8" />
+    <None Include=".git\objects\9c\8f15063aee0e41980ae1c525218f3343a35792" />
+    <None Include=".git\objects\a0\6c2c39fbe95ade8e50cff033a4cb69f26d9ab3" />
+    <None Include=".git\objects\a1\12b775c35f1bb707a6c4d143e02f6f1e6193b8" />
+    <None Include=".git\objects\a2\60291bfeb253fe3d06f0ca48f6e56a87e402d0" />
+    <None Include=".git\objects\a3\b807dfaa31b9617587cdbb08183043429ffe0a" />
+    <None Include=".git\objects\a6\32cd9640c92147cc3a73d561ef3543b253b71d" />
+    <None Include=".git\objects\a7\43f649684f0d4ec95ea0f69d62ad196131da86" />
+    <None Include=".git\objects\a9\df5a2edb2f6d8ebd00eed8c793e4b7bc35088e" />
+    <None Include=".git\objects\aa\5d2cb7d4f34ea8f5e8ba8c13c855993b47316d" />
+    <None Include=".git\objects\ab\c09c1031aed2a5d76afccbb25af99a6cc159d5" />
+    <None Include=".git\objects\ad\a7939bfea6c68a70f7744a8114becad59b4fa6" />
+    <None Include=".git\objects\af\7dbebbacef595e3089c01c05671016c21a8304" />
+    <None Include=".git\objects\af\f70b603aa6cbab5fba9071de885d2c99a9201e" />
+    <None Include=".git\objects\b1\308b4d8423b68a4a0fb36c41dbcb66c9c30b20" />
+    <None Include=".git\objects\b1\b88db8a37b3914e03597a852261a8b4dab519d" />
+    <None Include=".git\objects\b3\1a378eb4dcc86c55819f411ae2ab3326f14717" />
+    <None Include=".git\objects\b4\3b0762050d5929f266a03ba3aa3fdfbe63dba0" />
+    <None Include=".git\objects\b8\5dc0e0ac6a7d80406235f4b8474aaa9f678952" />
+    <None Include=".git\objects\b8\f7ab415f75e698133d9ed2bb2a5043aa48289f" />
+    <None Include=".git\objects\bc\2282f8f9307375fb4fcbb872bf284b70077806" />
+    <None Include=".git\objects\bd\f4119f3d2924837c59236d3c4dedfecd6ba26f" />
+    <None Include=".git\objects\c1\29f0d3aa985b2a8ab78884299572d23328d67f" />
+    <None Include=".git\objects\c3\bc06942ff68211d1bda8ca11e8c58b89193c39" />
+    <None Include=".git\objects\c4\6554f67ba0608d2c6f6b8c2e4ae9ff0c856b29" />
+    <None Include=".git\objects\c4\883a2e3d885cae754eef91921f4cd56c0f5065" />
+    <None Include=".git\objects\c6\c6d3b8544c8715593c2e1989244dbd2c815d2a" />
+    <None Include=".git\objects\c8\e4411c18f1f37e81294090b926aa9f0c664b7b" />
+    <None Include=".git\objects\c9\df3aebb7f6d2aaf13e437380978cbfe3b457a7" />
+    <None Include=".git\objects\cc\8583aa4f34b83922327f849716f09817d74eff" />
+    <None Include=".git\objects\cc\d939d87dbc54a4d6b0d1541cc3abc1db5f9134" />
+    <None Include=".git\objects\d1\8836d00febcee3cb503c95ceec99811fb09653" />
+    <None Include=".git\objects\d2\e3f0cf5898ee1217247ac7b0bf367e7891e608" />
+    <None Include=".git\objects\d5\114e0e26170af1be5504d3b27b24b11e847d37" />
+    <None Include=".git\objects\d9\12b60945e407ad1d68489412806dcf3a75af3b" />
+    <None Include=".git\objects\dd\cd2f0af0bc1add19e7e38bc7c426fe1664cc1c" />
+    <None Include=".git\objects\e1\2a69fecfe81811ae40cbe311d72f06dbe73df9" />
+    <None Include=".git\objects\e4\0a86147489eb76a55f3dcacc4a0098fb61eecf" />
+    <None Include=".git\objects\e6\c4207fabea002f34c40d51f22faf0f22004b32" />
+    <None Include=".git\objects\e9\958a8e3d8a3b48f227dfb69c9c4f3ef7543b23" />
+    <None Include=".git\objects\e9\a3aaa3e052636625588d7d80f0839001515f92" />
+    <None Include=".git\objects\ea\35c41e63b26d10db304731a2049e745fa62b72" />
+    <None Include=".git\objects\eb\f912a7f0e968f597b21c909f1fea7fc9c43768" />
+    <None Include=".git\objects\ec\df9226cb848d33256a5ae9a4bd619317d2872e" />
+    <None Include=".git\objects\ec\e5b3af87b1f9994da692c1c9ec5038b301e245" />
+    <None Include=".git\objects\ed\c19a72dd1d33e5c493f40ce5e118008739dd11" />
+    <None Include=".git\objects\f1\013f49310bfa2fc588e8a041a1235a2af70e9c" />
+    <None Include=".git\objects\f4\4159223fda43e7714e1bbb348c1249947e3f21" />
+    <None Include=".git\objects\f6\25d23dde981959a15a4798640f0946e7a9f935" />
+    <None Include=".git\objects\fb\5e2a237327cb84c176bb8fd3e809e90c8bc9dd" />
+    <None Include=".git\objects\fc\b8d15370fef6b6aaf33e15f165ac03a6b9a4e9" />
+    <None Include=".git\objects\fe\3b6acd48cc038f8062fb5c08d98fb4383c7d6c" />
+    <None Include=".git\objects\ff\15be9a562c6846576b0a5dbe9d406c9ac6d2ce" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".vs\config\applicationhost.config" />
+    <None Include=".vs\Labb 2\v15\.suo" />
+    <None Include=".vs\Labb2\v15\.suo" />
+    <None Include=".vs\Labb2\v15\Server\sqlite3\db.lock" />
+    <None Include=".vs\Labb2\v15\Server\sqlite3\storage.ide" />
+    <None Include=".vs\Labb2\v15\Server\sqlite3\storage.ide-shm" />
+    <None Include=".vs\Labb2\v15\Server\sqlite3\storage.ide-wal" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="CodeMap1.dgml" />
+    <None Include="packages\MaterialDesignColors.1.1.3\.signature.p7s" />
+    <None Include="packages\MaterialDesignColors.1.1.3\MaterialDesignColors.1.1.3.nupkg" />
+    <None Include="packages\MaterialDesignThemes.2.5.0.1205\.signature.p7s" />
+    <None Include="packages\MaterialDesignThemes.2.5.0.1205\MaterialDesignThemes.2.5.0.1205.nupkg" />
+    <None Include="Uppgift1\App.config" />
+    <None Include="Uppgift1\bin\Debug\people.bin" />
+    <None Include="Uppgift1\bin\Debug\persons" />
+    <None Include="Uppgift1\bin\Debug\Uppgift1.exe.config" />
+    <None Include="Uppgift1\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Uppgift1\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Uppgift1\obj\Debug\Labb2.csproj.CoreCompileInputs.cache" />
+    <None Include="Uppgift1\obj\Debug\Labb2.csprojAssemblyReference.cache" />
+    <None Include="Uppgift1\obj\Debug\Uppgift1.csproj.CoreCompileInputs.cache" />
+    <None Include="Uppgift1\obj\Debug\Uppgift1.csproj.GenerateResource.cache" />
+    <None Include="Uppgift1\obj\Debug\Uppgift1.csprojAssemblyReference.cache" />
+    <None Include="Uppgift1\obj\Debug\Uppgift1_MarkupCompile.cache" />
+    <None Include="Uppgift1\obj\Debug\Uppgift1_MarkupCompile.i.cache" />
+    <None Include="Uppgift1\obj\Debug\Uppgift1_MarkupCompile.lref" />
+    <None Include="Uppgift1\obj\Release\Uppgift1.csproj.CoreCompileInputs.cache" />
+    <None Include="Uppgift1\obj\Release\Uppgift1_MarkupCompile.cache" />
+    <None Include="Uppgift1\obj\Release\Uppgift1_MarkupCompile.lref" />
+    <None Include="Uppgift1\Properties\Settings.settings" />
+    <None Include="Uppgift2\App.config" />
+    <None Include="Uppgift2\bin\Debug\customers.bin" />
+    <None Include="Uppgift2\bin\Debug\Uppgift2.exe.config" />
+    <None Include="Uppgift2\obj\Debug\App.baml" />
+    <None Include="Uppgift2\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Uppgift2\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Uppgift2\obj\Debug\MainWindow.baml" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2.csproj.CopyComplete" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2.csproj.CoreCompileInputs.cache" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2.csproj.GenerateResource.cache" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2.csprojAssemblyReference.cache" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2_MarkupCompile.cache" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2_MarkupCompile.i.cache" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2_MarkupCompile.i.lref" />
+    <None Include="Uppgift2\obj\Debug\Uppgift2_MarkupCompile.lref" />
+    <None Include="Uppgift2\obj\Release\Uppgift2.csproj.CoreCompileInputs.cache" />
+    <None Include="Uppgift2\obj\Release\Uppgift2_MarkupCompile.cache" />
+    <None Include="Uppgift2\obj\Release\Uppgift2_MarkupCompile.lref" />
+    <None Include="Uppgift2\packages.config" />
+    <None Include="Uppgift2\Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Badged.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\BaseTheme.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ButtonProgressAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Card.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Chip.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Clock.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ClockChoiceMadeEventArgs.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ClockItemButton.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ColorZone.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ColorZoneAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ComboBoxAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ComboBoxPopup.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\BrushRoundConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\BrushToRadialGradientBrushConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CalendarDateCoalesceConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CircularProgressBar\ArcEndPointConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CircularProgressBar\ArcSizeConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CircularProgressBar\LargeArcConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CircularProgressBar\LocalEx.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CircularProgressBar\RotateTransformCentreConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CircularProgressBar\RotateTransformConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\CircularProgressBar\StartPointConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\ClockItemIsCheckedConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\ClockLineConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\DrawerOffsetConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\EqualityToVisibilityConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\HintProxyFabricConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\ListViewItemContainerStyleConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\MathConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\MathMultipleConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\NotConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\NotZeroConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\NotZeroToVisibilityConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\NullableDateTimeToCurrentDateConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\PointValueConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\RangeLengthConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\RangePositionConverterConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\ShadowConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\ShadowEdgeConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\ShadowInfo.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\SizeToRectConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\SnackbarMessageTypeConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\TextFieldHintVisibilityConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Converters\TimeToVisibilityConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\CustomPopupPlacementCallbackHelper.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DataGridAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DateTimeEx.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DialogClosingEventArgs.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DialogClosingEventHandler.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DialogHost.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DialogHostEx.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DialogOpenedEventArgs.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DialogOpenedEventHandler.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DialogSession.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DpiHelper.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\DrawerHost.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Extensions.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Flipper.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\HintAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\HintProxyFabric.ComboBox.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\HintProxyFabric.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\HintProxyFabric.PasswordBox.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\HintProxyFabric.TextBox.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Icon.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\IconType.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\IHintProxy.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ISnackbarMessageQueue.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ListBoxAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ListSortDirectionIndicator.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ListViewAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\MaterialDataGridComboBoxColumn.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\MaterialDataGridTextColumn.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\MaterialDateDisplay.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\MessageQueueExtension.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\obj\AppVeyor\GeneratedInternalTypeHelper.g.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\PackIcon.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\PackIconDataFactory.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\PackIconExtension.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\PackIconKind.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Palette.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\PaletteHelper.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Plane3D.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\PopupBox.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Properties\AssemblyInfo.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Properties\Resources.Designer.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Properties\Settings.Designer.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\RatingBar.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\RatingBarButton.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Ripple.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\RippleAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ScaleHost.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Screen.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ScrollViewerAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ShadowAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\SmartHint.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Snackbar.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\SnackbarMessage.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\SnackbarMessageEventArgs.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\SnackbarMessageQueue.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\SnackbarMessageQueueItem.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Spelling.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\StringExtensions.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\TextFieldAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ThemeAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\TimePicker.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ToggleButtonAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ToolTipAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\CircleWipe.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\FadeWipe.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\IndexedItemOffsetMultiplierExtension.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\ITransitionEffect.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\ITransitionEffectSubject.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\ITransitionWipe.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\IZIndexController.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\SlideDirection.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\SlideOutWipe.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\SlideWipe.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionEffect.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionEffectBase.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionEffectExtension.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionEffectKind.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionEffectTypeConverter.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\Transitioner.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionerSlide.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitionerSlideState.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitioningContent.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Transitions\TransitioningContentBase.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\TreeHelper.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\TreeViewAssist.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\Underline.cs" />
+    <Compile Include="packages\MaterialDesignThemes.2.5.0.1205\src\net45\ValidationAssist.cs" />
+    <Compile Include="Uppgift1\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Uppgift1\Classes\CandyCalculator.cs" />
+    <Compile Include="Uppgift1\Classes\FileOperations.cs" />
+    <Compile Include="Uppgift1\Classes\PeopleHandler.cs" />
+    <Compile Include="Uppgift1\Classes\Person.cs" />
+    <Compile Include="Uppgift1\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Uppgift1\obj\Debug\App.g.cs" />
+    <Compile Include="Uppgift1\obj\Debug\App.g.i.cs" />
+    <Compile Include="Uppgift1\obj\Debug\MainWindow.g.cs" />
+    <Compile Include="Uppgift1\obj\Debug\MainWindow.g.i.cs" />
+    <Compile Include="Uppgift1\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Uppgift1\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Uppgift1\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Uppgift1\obj\Release\App.g.cs" />
+    <Compile Include="Uppgift1\obj\Release\MainWindow.g.cs" />
+    <Compile Include="Uppgift1\Properties\AssemblyInfo.cs" />
+    <Compile Include="Uppgift1\Properties\Resources.Designer.cs" />
+    <Compile Include="Uppgift1\Properties\Settings.Designer.cs" />
+    <Compile Include="Uppgift2\Accounts\BankAccount.cs" />
+    <Compile Include="Uppgift2\Accounts\CheckingAccount.cs" />
+    <Compile Include="Uppgift2\Accounts\RetirementAccount.cs" />
+    <Compile Include="Uppgift2\Accounts\SavingsAccount.cs" />
+    <Compile Include="Uppgift2\Accounts\Transaction.cs" />
+    <Compile Include="Uppgift2\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Uppgift2\Bank.cs" />
+    <Compile Include="Uppgift2\Customer\Address.cs" />
+    <Compile Include="Uppgift2\Customer\Customer.cs" />
+    <Compile Include="Uppgift2\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Uppgift2\obj\Debug\App.g.cs" />
+    <Compile Include="Uppgift2\obj\Debug\App.g.i.cs" />
+    <Compile Include="Uppgift2\obj\Debug\MainWindow.g.cs" />
+    <Compile Include="Uppgift2\obj\Debug\MainWindow.g.i.cs" />
+    <Compile Include="Uppgift2\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Uppgift2\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Uppgift2\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Uppgift2\obj\Release\App.g.cs" />
+    <Compile Include="Uppgift2\obj\Release\MainWindow.g.cs" />
+    <Compile Include="Uppgift2\Properties\AssemblyInfo.cs" />
+    <Compile Include="Uppgift2\Properties\Resources.Designer.cs" />
+    <Compile Include="Uppgift2\Properties\Settings.Designer.cs" />
+    <Compile Include="Uppgift2\Static\FileOperations.cs" />
+    <Compile Include="Uppgift2\Static\Globals.cs" />
+    <Compile Include="Uppgift2\Static\MessageBoxHandler.cs" />
+    <Compile Include="Uppgift2\Test\DummyData.cs" />
+    <Compile Include="Uppgift2\Validation\AddressValidator.cs" />
+    <Compile Include="Uppgift2\Validation\CustomerValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Uppgift1\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Uppgift1\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Uppgift2\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Uppgift2\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Uppgift1\obj\Debug\Uppgift1.g.resources" />
+    <EmbeddedResource Include="Uppgift1\obj\Debug\Uppgift1.Properties.Resources.resources" />
+    <EmbeddedResource Include="Uppgift1\Properties\Resources.resx" />
+    <EmbeddedResource Include="Uppgift2\obj\Debug\Uppgift2.g.resources" />
+    <EmbeddedResource Include="Uppgift2\obj\Debug\Uppgift2.Properties.Resources.resources" />
+    <EmbeddedResource Include="Uppgift2\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include="Uppgift1\bin\Release\" />
+    <Folder Include="Uppgift2\bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
