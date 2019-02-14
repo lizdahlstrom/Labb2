@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Uppgift1
+namespace Uppgift1.Models
 {
-    [Serializable]
-    class Person
+    [Serializable()]
+    public class PersonModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -11,7 +11,7 @@ namespace Uppgift1
         public int Candies { get; set; }
         public DateTime DateAdded { get; } = DateTime.Now;
 
-        public Person(int age, string firstName, string lastName)
+        public PersonModel(int age, string firstName, string lastName)
         {
             Age = age;
             FirstName = firstName;
