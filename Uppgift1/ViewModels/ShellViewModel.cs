@@ -36,11 +36,7 @@ namespace Uppgift1.ViewModels
         public BindableCollection<PersonModel> People
         {
             get => _people;
-            set
-            {
-                _people = value;
-                NotifyOfPropertyChange(() => People);
-            }
+            set { _people = value; NotifyOfPropertyChange(() => People); }
         }
 
         public PersonModel SelectedPerson
