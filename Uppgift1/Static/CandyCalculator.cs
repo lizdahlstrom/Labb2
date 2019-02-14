@@ -24,6 +24,5 @@ namespace Uppgift1
 
             return people;
         }
-
     }
 }

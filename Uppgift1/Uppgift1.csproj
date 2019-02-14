@@ -77,9 +77,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Classes\CandyCalculator.cs" />
-    <Compile Include="Classes\PeopleHandler.cs" />
-    <Compile Include="Classes\FileOperations.cs" />
+    <Compile Include="Static\CandyCalculator.cs" />
+    <Compile Include="Static\PeopleHandler.cs" />
+    <Compile Include="Static\FileOperations.cs" />
     <Page Include="Views\ShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

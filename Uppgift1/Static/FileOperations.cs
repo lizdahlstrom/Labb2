@@ -5,7 +5,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Uppgift1
 {
-
     static class FileOperations
     {
         public static void Serialize(object objectToSerialize, string fileName)
