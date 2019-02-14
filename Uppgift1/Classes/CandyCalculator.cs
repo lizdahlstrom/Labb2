@@ -1,18 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
+using Uppgift1.Models;
 
 namespace Uppgift1
 {
     static class CandyCalculator
     {
-
-        public static List<Person> DistributeCandies(List<Person> people, int numcandies)
+        public static List<PersonModel> DistributeCandies(List<PersonModel> people, int numCandies)
         {
-            if (!people.Any() || numcandies <= 0) return people;
+            if (!people.Any() || numCandies <= 0) return people;
 
-            var remainder = (numcandies % people.Count);
-            var evenCandies = (numcandies / people.Count);
+            var remainder = (numCandies % people.Count);
+            var evenCandies = (numCandies / people.Count);
 
             people.ForEach(person => person.Candies += evenCandies);
 
@@ -22,6 +21,7 @@ namespace Uppgift1
             {
                 people[i].Candies++;
             }
+
             return people;
         }
 
