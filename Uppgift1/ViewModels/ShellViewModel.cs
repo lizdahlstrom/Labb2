@@ -14,6 +14,7 @@ namespace Uppgift1.ViewModels
         private BindableCollection<PersonModel> _people;
         private PersonModel _selectedPerson;
         private bool _isSortByAgeSelected;
+        public int NumOfCandies { get; set; }
 
         public string FirstName
         {
@@ -51,14 +52,16 @@ namespace Uppgift1.ViewModels
             set { _isSortByAgeSelected = value; NotifyOfPropertyChange(() => IsSortByAgeSelected); }
         }
 
-        public int NumOfCandies { get; set; }
-
-        public ShellViewModel() => People = new BindableCollection<PersonModel>(PeopleHandler.LoadPeople());
+        public ShellViewModel()
+        {
+            People = new BindableCollection<PersonModel>(PeopleHandler.LoadPeople());
+        }
 
         public bool CanAddPerson(int age, string firstName, string lastName)
         {
             return !string.IsNullOrWhiteSpace(firstName) && !string.IsNullOrWhiteSpace(lastName) && age > 0;
         }
+
         public void AddPerson(int age, string firstName, string lastName)
         {
             People.Add(new PersonModel(Age, FirstName, LastName));
