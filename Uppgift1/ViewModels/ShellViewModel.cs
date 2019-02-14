@@ -13,8 +13,8 @@ namespace Uppgift1.ViewModels
         private int _age;
         private BindableCollection<PersonModel> _people;
         private PersonModel _selectedPerson;
-        private bool _isSortByAgeSelected;
         public int NumOfCandies { get; set; }
+        public bool IsSortByAgeSelected { get; set; }
 
         public string FirstName
         {
@@ -46,12 +46,6 @@ namespace Uppgift1.ViewModels
             set { _selectedPerson = value; NotifyOfPropertyChange(() => SelectedPerson); }
         }
 
-        public bool IsSortByAgeSelected
-        {
-            get => _isSortByAgeSelected;
-            set { _isSortByAgeSelected = value; NotifyOfPropertyChange(() => IsSortByAgeSelected); }
-        }
-
         public ShellViewModel()
         {
             People = new BindableCollection<PersonModel>(PeopleHandler.LoadPeople());
@@ -69,6 +63,8 @@ namespace Uppgift1.ViewModels
             Age = 0;
             FirstName = "";
             LastName = "";
+
+            SortPeople();
         }
 
         public bool CanDistributeCandies(int numOfCandies) => numOfCandies > 0;
