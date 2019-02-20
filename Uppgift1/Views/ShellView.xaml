@@ -43,10 +43,9 @@
         <TextBox x:Name="NumOfCandies" Grid.Row="3" Grid.Column="2"/>
 
         <!--Sort-->
-        <StackPanel Grid.Row="4" Grid.Column="0">
-            <Label Content="Sort"/>
+        <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,10">
             <CheckBox x:Name="SortPeople" IsChecked="{Binding IsSortByAgeSelected}" >
-                <TextBox  Text="By age" TextWrapping="Wrap" RenderTransformOrigin="0.521,0.173" />
+                <TextBlock  Text="Sort by age" TextWrapping="Wrap" RenderTransformOrigin="0.521,0.173" />
             </CheckBox>
         </StackPanel>
 

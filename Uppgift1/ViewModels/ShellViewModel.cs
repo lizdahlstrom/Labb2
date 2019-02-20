@@ -37,7 +37,9 @@ namespace Uppgift1.ViewModels
         public BindableCollection<PersonModel> People
         {
             get => _people;
-            set { _people = value; NotifyOfPropertyChange(() => People); }
+            set { _people = value; NotifyOfPropertyChange(() => People);
+                NotifyOfPropertyChange(() => CanDistributeCandies);
+            }
         }
 
         public PersonModel SelectedPerson
@@ -50,6 +52,8 @@ namespace Uppgift1.ViewModels
         {
             People = new BindableCollection<PersonModel>(PeopleHandler.LoadPeople());
         }
+
+        public bool CanDistributeCandies => NumOfCandies > 0 && People.Count > 0;
 
         public bool CanAddPerson(int age, string firstName, string lastName)
         {
@@ -67,8 +71,6 @@ namespace Uppgift1.ViewModels
             SortPeople();
         }
 
-        public bool CanDistributeCandies(int numOfCandies) => numOfCandies > 0;
-
         public void DistributeCandies(int numOfCandies)
         {
             People = new BindableCollection<PersonModel>
@@ -81,6 +83,9 @@ namespace Uppgift1.ViewModels
                 People.Clear();
             else
                 People.Remove(SelectedPerson);
+
+            NotifyOfPropertyChange(() => People);
+            NotifyOfPropertyChange(() => CanDistributeCandies);
         }
 
         public void ClearCandies()
