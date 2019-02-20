@@ -63,11 +63,17 @@ namespace Uppgift2
 
             if (!double.TryParse(tbSetAccountCredit.Text, out var credit))
             {
-                SelectedCustomer.OpenAccount(accountType);
+                if (!SelectedCustomer.OpenAccount(accountType))
+                {
+                    PopupHandler.DisplayError("Could not open account");
+                };
             }
             else
             {
-                SelectedCustomer.OpenAccount(accountType, credit);
+                if (!SelectedCustomer.OpenAccount(accountType, credit))
+                {
+                    PopupHandler.DisplayError("Could not open account");
+                };
             }
 
             UpdateAccountListBox();

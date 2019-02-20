@@ -23,6 +23,5 @@ namespace Uppgift2
         }
 
         private double CalculateFee(double amount) => amount * withdrawalFeePercentage;
-
     }
 }

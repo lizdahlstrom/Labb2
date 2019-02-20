@@ -3,7 +3,7 @@ using System.Windows;
 
 namespace Uppgift2.Static
 {
-    static class MessageBoxHandler
+    static class PopupHandler
     {
 
         public static void DisplayValidationViolations(List<string> violations)
@@ -16,6 +16,11 @@ namespace Uppgift2.Static
             MessageBox.Show(msg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
+        public static void DisplaySuccess(string caption, string msg)
+        {
+            MessageBox.Show(msg, "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
         private static string GenerateMessageString(List<string> messages)
         {
             var messageString = "";
@@ -24,6 +29,7 @@ namespace Uppgift2.Static
 
             return messageString;
         }
+
 
     }
 }

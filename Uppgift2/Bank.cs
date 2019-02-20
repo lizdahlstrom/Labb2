@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using Uppgift2.Static;
 using static Uppgift2.Static.Globals;
-using static Uppgift2.Static.MessageBoxHandler;
+using static Uppgift2.Static.PopupHandler;
 
 namespace Uppgift2
 {

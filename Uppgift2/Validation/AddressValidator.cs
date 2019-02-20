@@ -6,7 +6,6 @@ namespace Uppgift2.Static
 {
     class AddressValidator
     {
-
         private Address address;
         private List<string> invalidMessages;
 
@@ -45,7 +44,6 @@ namespace Uppgift2.Static
 
         private void ValidateZipCode() // zip format: XXXXX
         {
-
             if (string.IsNullOrEmpty(address.ZipCode))
             {
                 invalidMessages.Add("Zip code cannot be empty.");

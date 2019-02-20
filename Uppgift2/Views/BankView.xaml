@@ -1,0 +1,42 @@
+﻿<Window x:Class="Uppgift2.Views.BankView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Uppgift2.Views"
+        mc:Ignorable="d"
+        Title="Bank Application" Height="1022" Width="1243"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        >
+
+    <ScrollViewer>
+        <Grid Margin="20" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <!--Select Customer-->
+            <!--<ContentControl x:Name="SelectCustomerViewModel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>-->
+
+            <!-- Add new customer-->
+            <!--<ContentControl x:Name="AddNewCustomerViewModel" Grid.Row="0" Grid.Column="2"/>-->
+
+            <!--Manage customer accounts-->
+            <ContentControl x:Name="ManageAccountsViewModel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"/>
+
+        </Grid>
+    </ScrollViewer>
+</Window>

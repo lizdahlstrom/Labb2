@@ -13,8 +13,11 @@ namespace Uppgift2
             {
                 var formatter = new BinaryFormatter();
 
-                using (Stream fStream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None))
-                { formatter.Serialize(fStream, objectToSerialize); }
+                using (Stream fStream =
+                    new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None))
+                {
+                    formatter.Serialize(fStream, objectToSerialize);
+                }
             }
             catch (SerializationException e)
             {
@@ -34,7 +37,6 @@ namespace Uppgift2
                 {
                     return formatter.Deserialize(fStream);
                 }
-
             }
             catch (SerializationException e)
             {

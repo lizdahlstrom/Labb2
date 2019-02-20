@@ -24,34 +24,33 @@ namespace Uppgift2
             SocialSecurityNumber = socialsecurity;
         }
 
-        public void OpenAccount(AccountType accountType)
+        public bool OpenAccount(AccountType accountType)
         {
             switch (accountType)
             {
                 case AccountType.Checking:
                     Accounts.Add(new CheckingAccount());
-                    break;
+                    return true;
                 case AccountType.Savings:
                     Accounts.Add(new SavingsAccount());
-                    break;
+                    return true;
                 case AccountType.Retirement:
                     Accounts.Add(new RetirementAccount());
-                    break;
+                    return true;
                 default:
-                    Console.WriteLine("Account type not valid...");
-                    break;
+                    return false;
             }
         }
 
-        public void OpenAccount(AccountType accountType, double credit)
+        public bool OpenAccount(AccountType accountType, double credit)
         {
-            if (accountType.Equals(AccountType.Checking))
-            {
-                Accounts.Add(new CheckingAccount(credit));
-            }
+            if (!accountType.Equals(AccountType.Checking))
+                return false;
+
+            Accounts.Add(new CheckingAccount(credit));
+            return true;
         }
 
         public void CloseAccount(BankAccount account) => Accounts.Remove(account);
-
     }
 }

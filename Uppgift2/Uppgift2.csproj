@@ -50,6 +50,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -58,6 +67,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -76,9 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Accounts\CheckingAccount.cs" />
-    <Compile Include="Accounts\RetirementAccount.cs" />
-    <Compile Include="Accounts\SavingsAccount.cs" />
+    <Compile Include="Models\Accounts\CheckingAccount.cs" />
+    <Compile Include="Models\Accounts\RetirementAccount.cs" />
+    <Compile Include="Models\Accounts\SavingsAccount.cs" />
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,29 +102,53 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Static\MessageBoxHandler.cs" />
+    <Compile Include="Static\PopupHandler.cs" />
     <Compile Include="Validation\AddressValidator.cs" />
     <Compile Include="Static\Globals.cs" />
     <Compile Include="Test\DummyData.cs" />
     <Compile Include="Validation\CustomerValidator.cs" />
-    <Compile Include="Customer\Address.cs" />
+    <Compile Include="Models\Customer\Address.cs" />
+    <Compile Include="ViewModels\AddNewCustomerViewModel.cs" />
+    <Compile Include="ViewModels\BankViewModel.cs" />
+    <Compile Include="ViewModels\ManageAccountsViewModel.cs" />
+    <Compile Include="Views\AddNewCustomerView.xaml.cs">
+      <DependentUpon>AddNewCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankView.xaml.cs">
+      <DependentUpon>BankView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageAccountsView.xaml.cs">
+      <DependentUpon>ManageAccountsView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Accounts\Transaction.cs" />
+    <Compile Include="Models\Accounts\Transaction.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Accounts\BankAccount.cs" />
+    <Compile Include="Models\Accounts\BankAccount.cs" />
     <Compile Include="Bank.cs" />
-    <Compile Include="Customer\Customer.cs" />
+    <Compile Include="Models\Customer\Customer.cs" />
     <Compile Include="Static\FileOperations.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddNewCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BankView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManageAccountsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -142,5 +179,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,7 +25,6 @@ namespace Uppgift2.Static
             ValidateCellphone();
 
             return Violations.Union(addressValidation).ToList();
-
         }
 
         private void ValidateFirstName()
