@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              >
     <Grid>
-        <materialDesign:Card Padding="16,20" Margin="16,0,0,16"  >
+        <materialDesign:Card Padding="16,20" Margin="16,0,0,0" Height="328"  >
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -34,7 +34,7 @@
                     <TextBox x:Name="PhoneNumber" materialDesign:HintAssist.Hint="Cellphone"  Margin="0,10"  TabIndex="3" />
                     <TextBox x:Name="Zip" materialDesign:HintAssist.Hint="Zip" Margin="0,10" TabIndex="5" />
                     <TextBox x:Name="City" materialDesign:HintAssist.Hint="City" Margin="0,10" TabIndex="6" />
-                    <Button x:Name="AddNewCustomer" Content="Add" TabIndex="7" Margin="0,16,0,0" Width="120" HorizontalAlignment="Right" />
+                    <Button  x:Name="AddNewCustomer" Content="Add" TabIndex="7" Margin="0,16,0,0" Width="120" HorizontalAlignment="Right" />
                 </StackPanel>
             </Grid>
         </materialDesign:Card>

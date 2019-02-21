@@ -120,23 +120,14 @@
     <Compile Include="Views\ManageAccountsView.xaml.cs">
       <DependentUpon>ManageAccountsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="Models\Accounts\Transaction.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Accounts\BankAccount.cs" />
-    <Compile Include="Bank.cs" />
     <Compile Include="Models\Customer\Customer.cs" />
     <Compile Include="Static\FileOperations.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="Views\AddNewCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

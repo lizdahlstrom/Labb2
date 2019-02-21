@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Uppgift2.Views"
         mc:Ignorable="d"
-        Title="Bank Application" Height="1022" Width="1243"
+        WindowStartupLocation="CenterScreen"
+        Title="Bank Application" Height="990.634" Width="1243"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -13,7 +14,7 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
+        FontFamily="{DynamicResource MaterialDesignFont}" 
         >
 
     <ScrollViewer>
@@ -26,16 +27,14 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
-            <!--Select Customer-->
-            <!--<ContentControl x:Name="SelectCustomerViewModel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>-->
-
             <!-- Add new customer-->
-            <!--<ContentControl x:Name="AddNewCustomerViewModel" Grid.Row="0" Grid.Column="2"/>-->
+            <ContentControl x:Name="AddNewCustomerViewModel" Grid.Row="0" Grid.Column="2" />
 
             <!--Manage customer accounts-->
-            <ContentControl x:Name="ManageAccountsViewModel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"/>
+            <ContentControl x:Name="ManageAccountsViewModel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
 
         </Grid>
     </ScrollViewer>

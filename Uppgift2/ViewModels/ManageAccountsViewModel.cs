@@ -1,7 +1,8 @@
 ﻿using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Linq;
+using System.Windows;
 using Uppgift2.Accounts;
 using Uppgift2.Static;
 
@@ -19,15 +20,11 @@ namespace Uppgift2.ViewModels
 
         public BankViewModel BankViewModel { get; }
         public IReadOnlyList<AccountType> AccountType { get; }
-        public IReadOnlyList<TransactionType> TransactionType { get; set; }
-
-        public AccountType SelectedAccountType
-        {
-            get => _selectedAccountType;
-            set { _selectedAccountType = value; NotifyOfPropertyChange(() => SelectedAccountType); }
-        }
-
+        public IReadOnlyList<TransactionType> TransactionType { get; }
         public TransactionType SelectedTransactionType { get; set; } = Static.TransactionType.Deposit;
+        public Visibility IsCreditVisible => SelectedAccountType != Static.AccountType.Checking // should be implemented in view as it breaks mvvm principles
+            ? Visibility.Hidden
+            : Visibility.Visible;
 
         public Customer SelectedCustomer
         {
@@ -36,7 +33,10 @@ namespace Uppgift2.ViewModels
             {
                 _selectedCustomer = value;
                 NotifyOfPropertyChange(() => SelectedCustomer);
-                Accounts = new BindableCollection<BankAccount>(SelectedCustomer.Accounts);
+                NotifyOfPropertyChange(() => CanAddAccount);
+                Accounts = SelectedCustomer != null
+                    ? new BindableCollection<BankAccount>(SelectedCustomer.Accounts)
+                    : new BindableCollection<BankAccount>();
             }
         }
 
@@ -45,7 +45,9 @@ namespace Uppgift2.ViewModels
             get => _accounts;
             set
             {
-                _accounts = value; NotifyOfPropertyChange(() => Accounts);
+                _accounts = value;
+                NotifyOfPropertyChange(() => Accounts);
+                NotifyOfPropertyChange(() => CanMakeTransaction);
             }
         }
 
@@ -56,25 +58,55 @@ namespace Uppgift2.ViewModels
             {
                 _selectedAccount = value;
                 NotifyOfPropertyChange(() => SelectedAccount);
+                NotifyOfPropertyChange(() => CanCloseAccount);
+                Transactions = SelectedAccount != null
+                    ? new BindableCollection<Transaction>(SelectedAccount.Transactions)
+                    : new BindableCollection<Transaction>();
             }
         }
 
         public double AccountCredit
         {
             get => _accountCredit;
-            set { _accountCredit = value; NotifyOfPropertyChange(() => AccountCredit); }
+            set
+            {
+                _accountCredit = value;
+                NotifyOfPropertyChange(() => AccountCredit);
+                NotifyOfPropertyChange(() => CanAddAccount);
+            }
         }
 
         public double TransactionAmount
         {
             get => _transactionAmount;
-            set { _transactionAmount = value; NotifyOfPropertyChange(() => TransactionAmount); }
+            set
+            {
+                _transactionAmount = value;
+                NotifyOfPropertyChange(() => TransactionAmount);
+                NotifyOfPropertyChange(() => CanMakeTransaction);
+            }
         }
 
         public BindableCollection<Transaction> Transactions
         {
-            get => _transactions;
-            set { _transactions = value; NotifyOfPropertyChange(() => Transactions); }
+            get => new BindableCollection<Transaction>(_transactions.OrderByDescending(t => t.Date));
+            set
+            {
+                _transactions = value;
+                NotifyOfPropertyChange(() => Transactions);
+                NotifyOfPropertyChange(() => SelectedAccount);
+            }
+        }
+        public AccountType SelectedAccountType
+        {
+            get => _selectedAccountType;
+            set
+            {
+                _selectedAccountType = value;
+                NotifyOfPropertyChange(() => SelectedAccountType);
+                NotifyOfPropertyChange(() => IsCreditVisible);
+                NotifyOfPropertyChange(() => CanAddAccount);
+            }
         }
 
         public ManageAccountsViewModel(BankViewModel bankViewModel)
@@ -92,60 +124,54 @@ namespace Uppgift2.ViewModels
                 : new BindableCollection<Transaction>();
         }
 
-        public bool CanAddAccount(AccountType accountType, double accountCredit)
-        {
-            return SelectedCustomer != null;
-        }
+        public bool CanAddAccount => SelectedCustomer != null;
 
-        public void AddAccount(AccountType accountType, double accountCredit)
+        public void AddAccount()
         {
             if (AccountCredit > 0)
             {
-                SelectedCustomer.OpenAccount(accountType, AccountCredit);
+                SelectedCustomer.OpenAccount(SelectedAccountType, AccountCredit);
             }
             else
             {
-                SelectedCustomer.OpenAccount(accountType);
+                SelectedCustomer.OpenAccount(SelectedAccountType);
             }
 
+            AccountCredit = 0;
             Accounts = new BindableCollection<BankAccount>(SelectedCustomer.Accounts);
         }
 
-        public bool CanCloseAccount()
-        {
-            return SelectedCustomer != null && SelectedAccount != null;
-        }
+        public bool CanCloseAccount => SelectedCustomer != null && SelectedAccount != null;
 
         public void CloseAccount()
         {
             SelectedCustomer.CloseAccount(SelectedAccount);
+            Accounts = new BindableCollection<BankAccount>(SelectedCustomer.Accounts);
         }
 
-        public bool CanMakeTransaction()
-        {
-            if (TransactionAmount > 0 && SelectedAccount != null)
-                return true;
-            return false;
-        }
-
+        public bool CanMakeTransaction => TransactionAmount > 0 && SelectedAccount != null;
 
         public void MakeTransaction()
         {
-            if (SelectedTransactionType is Static.TransactionType.Withdrawal)
-                SelectedAccount.WithDraw(TransactionAmount);
-            else if (SelectedTransactionType is Static.TransactionType.Deposit)
-                SelectedAccount.Deposit(TransactionAmount);
+            switch (SelectedTransactionType)
+            {
+                case Static.TransactionType.Withdrawal:
+                    SelectedAccount.WithDraw(TransactionAmount);
+                    break;
+                case Static.TransactionType.Deposit:
+                    SelectedAccount.Deposit(TransactionAmount);
+                    break;
+            }
+
+            TransactionAmount = 0;
+            Accounts = new BindableCollection<BankAccount>(SelectedCustomer.Accounts);
+            Transactions = new BindableCollection<Transaction>(SelectedAccount.Transactions);
         }
 
         public void RemoveCustomer()
         {
-            Debug.WriteLine($"deleting {SelectedCustomer}");
             BankViewModel.Customers.Remove(SelectedCustomer);
             NotifyOfPropertyChange(() => SelectedCustomer);
         }
-
-
-
-
     }
 }
