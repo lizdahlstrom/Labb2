@@ -4,7 +4,7 @@ using Uppgift2.ViewModels;
 
 namespace Uppgift2
 {
-    public class Bootstrapper: BootstrapperBase
+    public class Bootstrapper : BootstrapperBase
     {
         public Bootstrapper()
         {

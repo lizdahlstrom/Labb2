@@ -5,10 +5,10 @@ namespace Uppgift2.Static
 {
     static class PopupHandler
     {
-
         public static void DisplayValidationViolations(List<string> violations)
         {
-            MessageBox.Show(GenerateMessageString(violations), "Invalid input", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show(GenerateMessageString(violations), "Invalid input", MessageBoxButton.OK,
+                MessageBoxImage.Error);
         }
 
         public static void DisplayError(string msg)
@@ -29,7 +29,5 @@ namespace Uppgift2.Static
 
             return messageString;
         }
-
-
     }
 }

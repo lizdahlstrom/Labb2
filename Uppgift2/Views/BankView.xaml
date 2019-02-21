@@ -11,14 +11,13 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"        
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}" 
-        >
+        FontFamily="{DynamicResource MaterialDesignFont}">
 
     <ScrollViewer>
-        <Grid Margin="20" >
+        <Grid Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -34,7 +33,8 @@
             <ContentControl x:Name="AddNewCustomerViewModel" Grid.Row="0" Grid.Column="2" />
 
             <!--Manage customer accounts-->
-            <ContentControl x:Name="ManageAccountsViewModel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
+            <ContentControl x:Name="ManageAccountsViewModel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
+                            Grid.RowSpan="3" />
 
         </Grid>
     </ScrollViewer>

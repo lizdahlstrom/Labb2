@@ -19,43 +19,71 @@ namespace Uppgift2.ViewModels
         public string FirstName
         {
             get => _firstName;
-            set { _firstName = value; NotifyOfPropertyChange(() => FirstName); }
+            set
+            {
+                _firstName = value;
+                NotifyOfPropertyChange(() => FirstName);
+            }
         }
 
         public string LastName
         {
             get => _lastName;
-            set { _lastName = value; NotifyOfPropertyChange(() => LastName); }
+            set
+            {
+                _lastName = value;
+                NotifyOfPropertyChange(() => LastName);
+            }
         }
 
         public string SSN
         {
             get => _ssn;
-            set { _ssn = value; NotifyOfPropertyChange(() => SSN); }
+            set
+            {
+                _ssn = value;
+                NotifyOfPropertyChange(() => SSN);
+            }
         }
 
         public string PhoneNumber
         {
             get => _phoneNumber;
-            set { _phoneNumber = value; NotifyOfPropertyChange(() => PhoneNumber); }
+            set
+            {
+                _phoneNumber = value;
+                NotifyOfPropertyChange(() => PhoneNumber);
+            }
         }
 
         public string Zip
         {
             get => _zip;
-            set { _zip = value; NotifyOfPropertyChange(() => Zip); }
+            set
+            {
+                _zip = value;
+                NotifyOfPropertyChange(() => Zip);
+            }
         }
 
         public string Street
         {
             get => _street;
-            set { _street = value; NotifyOfPropertyChange(() => Street); }
+            set
+            {
+                _street = value;
+                NotifyOfPropertyChange(() => Street);
+            }
         }
 
         public string City
         {
             get => _city;
-            set { _city = value; NotifyOfPropertyChange(() => City); }
+            set
+            {
+                _city = value;
+                NotifyOfPropertyChange(() => City);
+            }
         }
 
         public AddNewCustomerViewModel(BankViewModel bankViewModel)
@@ -67,12 +95,15 @@ namespace Uppgift2.ViewModels
             string phoneNumber, string zip, string street, string city)
         {
             return !string.IsNullOrWhiteSpace(firstName) && !string.IsNullOrWhiteSpace(lastName)
-                && !string.IsNullOrWhiteSpace(ssn) && !string.IsNullOrWhiteSpace(phoneNumber)
-                && !string.IsNullOrWhiteSpace(zip) && !string.IsNullOrWhiteSpace(street)
-                && !string.IsNullOrWhiteSpace(city);
+                                                         && !string.IsNullOrWhiteSpace(ssn) &&
+                                                         !string.IsNullOrWhiteSpace(phoneNumber)
+                                                         && !string.IsNullOrWhiteSpace(zip) &&
+                                                         !string.IsNullOrWhiteSpace(street)
+                                                         && !string.IsNullOrWhiteSpace(city);
         }
 
-        public void AddNewCustomer(string firstName, string lastName, string ssn, string phoneNumber, string zip, string street, string city)
+        public void AddNewCustomer(string firstName, string lastName, string ssn, string phoneNumber, string zip,
+            string street, string city)
         {
             var newCustomer = new Customer(firstName, lastName, ssn,
                 (new Address(street, zip, city)), phoneNumber);
@@ -92,7 +123,8 @@ namespace Uppgift2.ViewModels
 
             BankViewModel.Customers.Add(newCustomer);
 
-            PopupHandler.DisplaySuccess("Added customer", $"{newCustomer.FirstName} {newCustomer.LastName} has been added successfully.");
+            PopupHandler.DisplaySuccess("Added customer",
+                $"{newCustomer.FirstName} {newCustomer.LastName} has been added successfully.");
 
             ClearForm();
         }

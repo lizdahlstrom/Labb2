@@ -10,7 +10,6 @@ using static Uppgift2.Static.Globals;
 
 namespace Uppgift2.ViewModels
 {
-    [Serializable]
     public class BankViewModel : Screen
     {
         public AddNewCustomerViewModel AddNewCustomerViewModel { get; set; }
@@ -35,7 +34,5 @@ namespace Uppgift2.ViewModels
         }
 
         public void Save() => FileOperations.Serialize(Customers.ToList(), SaveFileName);
-
-
     }
 }

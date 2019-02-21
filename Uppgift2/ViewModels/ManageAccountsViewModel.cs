@@ -22,9 +22,12 @@ namespace Uppgift2.ViewModels
         public IReadOnlyList<AccountType> AccountType { get; }
         public IReadOnlyList<TransactionType> TransactionType { get; }
         public TransactionType SelectedTransactionType { get; set; } = Static.TransactionType.Deposit;
-        public Visibility IsCreditVisible => SelectedAccountType != Static.AccountType.Checking // should be implemented in view as it breaks mvvm principles
-            ? Visibility.Hidden
-            : Visibility.Visible;
+
+        public Visibility IsCreditVisible =>
+            SelectedAccountType !=
+            Static.AccountType.Checking // should be implemented in view as it breaks mvvm principles
+                ? Visibility.Hidden
+                : Visibility.Visible;
 
         public Customer SelectedCustomer
         {
@@ -97,6 +100,7 @@ namespace Uppgift2.ViewModels
                 NotifyOfPropertyChange(() => SelectedAccount);
             }
         }
+
         public AccountType SelectedAccountType
         {
             get => _selectedAccountType;

@@ -11,7 +11,6 @@ namespace Uppgift2.Static
 
         public List<string> Validate(Customer customer)
         {
-
             this.customer = customer;
 
             var addressValidation
@@ -72,6 +71,5 @@ namespace Uppgift2.Static
                 Violations.Add("SSN must be in format XXXXXXXX-XXXX");
             }
         }
-
     }
 }

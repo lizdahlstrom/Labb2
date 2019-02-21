@@ -1,7 +1,17 @@
 ﻿namespace Uppgift2.Static
 {
-    public enum AccountType { Checking, Savings, Retirement };
-    public enum TransactionType { Withdrawal, Deposit };
+    public enum AccountType
+    {
+        Checking,
+        Savings,
+        Retirement
+    };
+
+    public enum TransactionType
+    {
+        Withdrawal,
+        Deposit
+    };
 
     public static class Globals
     {

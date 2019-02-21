@@ -52,6 +52,5 @@ namespace Uppgift2
 
             return $"{Globals.ClearingNumber}-{GetString(4)} {GetString(4)} {GetString(2)}";
         }
-
     }
 }
