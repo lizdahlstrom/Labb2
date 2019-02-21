@@ -16,4 +16,5 @@ A bank application with the following type of accounts:
  - Checking
  - Savings 
  - Retirement
-It allows handling of customers, accounts, transactions, and presents the data in the view.
+ 
+ It allows handling of customers, accounts, transactions, and presents the data in the view.
