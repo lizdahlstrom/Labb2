@@ -88,6 +88,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\CreditVisibilityConverter.cs" />
+    <Compile Include="Converters\NullVisibilityConverter.cs" />
     <Compile Include="Models\Accounts\CheckingAccount.cs" />
     <Compile Include="Models\Accounts\RetirementAccount.cs" />
     <Compile Include="Models\Accounts\SavingsAccount.cs" />
@@ -105,7 +107,6 @@
     <Compile Include="Static\PopupHandler.cs" />
     <Compile Include="Validation\AddressValidator.cs" />
     <Compile Include="Static\Globals.cs" />
-    <Compile Include="Test\DummyData.cs" />
     <Compile Include="Validation\CustomerValidator.cs" />
     <Compile Include="Models\Customer\Address.cs" />
     <Compile Include="ViewModels\AddNewCustomerViewModel.cs" />

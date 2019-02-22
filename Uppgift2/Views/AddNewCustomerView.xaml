@@ -20,7 +20,7 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" Text="Add new Customer" />
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Text="Add new Customer" />
                 <Separator Grid.Row="1" Style="{StaticResource MaterialDesignDarkSeparator}" Margin="8 0 8 0" />
 
                 <StackPanel Grid.Row="2" Grid.Column="0" Margin="16">

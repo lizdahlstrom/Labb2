@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
 using Uppgift2.Accounts;
 using Uppgift2.Static;
 
@@ -16,18 +15,12 @@ namespace Uppgift2.ViewModels
         private double _accountCredit;
         private double _transactionAmount;
         private BindableCollection<Transaction> _transactions;
-        private AccountType _selectedAccountType = Static.AccountType.Checking;
+        private AccountType _selectedAccountType;
 
         public BankViewModel BankViewModel { get; }
         public IReadOnlyList<AccountType> AccountType { get; }
         public IReadOnlyList<TransactionType> TransactionType { get; }
         public TransactionType SelectedTransactionType { get; set; } = Static.TransactionType.Deposit;
-
-        public Visibility IsCreditVisible =>
-            SelectedAccountType !=
-            Static.AccountType.Checking // should be implemented in view as it breaks mvvm principles
-                ? Visibility.Hidden
-                : Visibility.Visible;
 
         public Customer SelectedCustomer
         {
@@ -108,7 +101,6 @@ namespace Uppgift2.ViewModels
             {
                 _selectedAccountType = value;
                 NotifyOfPropertyChange(() => SelectedAccountType);
-                NotifyOfPropertyChange(() => IsCreditVisible);
                 NotifyOfPropertyChange(() => CanAddAccount);
             }
         }
@@ -119,13 +111,10 @@ namespace Uppgift2.ViewModels
 
             AccountType = Enum.GetValues(typeof(AccountType)) as AccountType[];
             TransactionType = Enum.GetValues(typeof(TransactionType)) as TransactionType[];
+            SelectedAccountType = Static.AccountType.Checking;
 
-            Accounts = SelectedCustomer != null
-                ? new BindableCollection<BankAccount>(SelectedCustomer.Accounts)
-                : new BindableCollection<BankAccount>();
-            Transactions = SelectedAccount != null
-                ? new BindableCollection<Transaction>(SelectedAccount.Transactions)
-                : new BindableCollection<Transaction>();
+            Accounts = new BindableCollection<BankAccount>();
+            Transactions = new BindableCollection<Transaction>();
         }
 
         public bool CanAddAccount => SelectedCustomer != null;

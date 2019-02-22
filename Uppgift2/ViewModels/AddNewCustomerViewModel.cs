@@ -1,5 +1,4 @@
 ﻿using Caliburn.Micro;
-using System.Diagnostics;
 using System.Linq;
 using Uppgift2.Static;
 
@@ -115,7 +114,7 @@ namespace Uppgift2.ViewModels
                 PopupHandler.DisplayValidationViolations(validationErrors);
                 return;
             }
-            else if (BankViewModel.Customers.Any(c => c.SocialSecurityNumber.Equals(newCustomer.SocialSecurityNumber)))
+            if (BankViewModel.Customers.Any(c => c.SocialSecurityNumber.Equals(newCustomer.SocialSecurityNumber)))
             {
                 PopupHandler.DisplayError($"Customer with same SSN already exists.");
                 return;
