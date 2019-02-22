@@ -12,7 +12,7 @@ namespace Uppgift2
         public double CreditLimit { get; private set; }
         public double CreditBalance => Balance >= 0 ? CreditLimit : CreditLimit - Math.Abs(Balance);
 
-        public CheckingAccount(double creditLimit = DefaultCredit) => CreditLimit = creditLimit;
+        public CheckingAccount(string id, double creditLimit = DefaultCredit) : base(id) => CreditLimit = creditLimit;
 
         public override void WithDraw(double amount)
         {

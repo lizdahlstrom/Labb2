@@ -121,13 +121,15 @@ namespace Uppgift2.ViewModels
 
         public void AddAccount()
         {
+            var accountId = GetUniqueAccountId();
+
             if (AccountCredit > 0)
             {
-                SelectedCustomer.OpenAccount(SelectedAccountType, AccountCredit);
+                SelectedCustomer.OpenAccount(SelectedAccountType, AccountCredit, accountId);
             }
             else
             {
-                SelectedCustomer.OpenAccount(SelectedAccountType);
+                SelectedCustomer.OpenAccount(SelectedAccountType, accountId);
             }
 
             AccountCredit = 0;
@@ -165,6 +167,23 @@ namespace Uppgift2.ViewModels
         {
             BankViewModel.Customers.Remove(SelectedCustomer);
             NotifyOfPropertyChange(() => SelectedCustomer);
+        }
+
+        private string GetUniqueAccountId()
+        {
+            string accountId;
+
+            do
+            {
+                accountId = Globals.GenerateAccountId();
+            } while (IsIdExistent());
+
+            bool IsIdExistent()
+            {
+                return BankViewModel.Customers.SelectMany(c => c.Accounts).Any(a => a.AccountNumber == accountId);
+            }
+
+            return accountId;
         }
     }
 }

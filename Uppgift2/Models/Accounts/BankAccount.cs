@@ -14,7 +14,7 @@ namespace Uppgift2
         public double Balance { get; set; } = 0;
         public List<Transaction> Transactions { get; } = new List<Transaction>();
 
-        public BankAccount() => AccountNumber = GenerateId();
+        public BankAccount(string id) => AccountNumber = id;
 
         public virtual void Deposit(double amount)
         {
@@ -32,25 +32,6 @@ namespace Uppgift2
         protected void AddTransaction(Transaction transaction)
         {
             Transactions.Add(transaction);
-        }
-
-        private string GenerateId()
-        {
-            var r = new Random();
-
-            string GetString(int length)
-            {
-                var sb = new StringBuilder();
-
-                for (var i = 0; i < length; i++)
-                {
-                    sb.Append(r.Next(0, 10));
-                }
-
-                return sb.ToString();
-            }
-
-            return $"{Globals.ClearingNumber}-{GetString(4)} {GetString(4)} {GetString(2)}";
         }
     }
 }

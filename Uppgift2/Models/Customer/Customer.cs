@@ -24,30 +24,30 @@ namespace Uppgift2
             SocialSecurityNumber = socialsecurity;
         }
 
-        public bool OpenAccount(AccountType accountType)
+        public bool OpenAccount(AccountType accountType, string id)
         {
             switch (accountType)
             {
                 case AccountType.Checking:
-                    Accounts.Add(new CheckingAccount());
+                    Accounts.Add(new CheckingAccount(id));
                     return true;
                 case AccountType.Savings:
-                    Accounts.Add(new SavingsAccount());
+                    Accounts.Add(new SavingsAccount(id));
                     return true;
                 case AccountType.Retirement:
-                    Accounts.Add(new RetirementAccount());
+                    Accounts.Add(new RetirementAccount(id));
                     return true;
                 default:
                     return false;
             }
         }
 
-        public bool OpenAccount(AccountType accountType, double credit)
+        public bool OpenAccount(AccountType accountType, double credit, string id)
         {
             if (!accountType.Equals(AccountType.Checking))
                 return false;
 
-            Accounts.Add(new CheckingAccount(credit));
+            Accounts.Add(new CheckingAccount(id, credit));
             return true;
         }
 

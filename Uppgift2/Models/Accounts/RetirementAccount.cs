@@ -12,6 +12,8 @@ namespace Uppgift2
         public override AccountType AccountType { get; } = AccountType.Retirement;
         public double Interest { get; } = interest;
 
+        public RetirementAccount(string id) : base(id) { }
+
         public override void WithDraw(double amount)
         {
             var fee = CalculateFee(amount);

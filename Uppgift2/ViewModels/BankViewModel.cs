@@ -1,11 +1,7 @@
-﻿using System;
+﻿using Caliburn.Micro;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Caliburn.Micro;
-using Uppgift2.Static;
 using static Uppgift2.Static.Globals;
 
 namespace Uppgift2.ViewModels
