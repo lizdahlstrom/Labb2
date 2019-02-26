@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using System.Linq;
 using Uppgift2.Static;
+using static Uppgift2.Static.PopupHandler;
 
 namespace Uppgift2.ViewModels
 {
@@ -107,25 +108,33 @@ namespace Uppgift2.ViewModels
             var newCustomer = new Customer(firstName, lastName, ssn,
                 (new Address(street, zip, city)), phoneNumber);
 
+            if (!IsCustomerValid(newCustomer)) return;
+
+            BankViewModel.Customers.Add(newCustomer);
+
+            DisplaySuccess("Added customer",
+                $"{newCustomer.FirstName} {newCustomer.LastName} has been added successfully.");
+
+            ClearForm();
+        }
+
+        private bool IsCustomerValid(Customer newCustomer)
+        {
             var validationErrors = new CustomerValidator().Validate(newCustomer);
 
             if (validationErrors.Count > 0)
             {
-                PopupHandler.DisplayValidationViolations(validationErrors);
-                return;
+                DisplayValidationViolations(validationErrors);
+                return false;
             }
+
             if (BankViewModel.Customers.Any(c => c.SocialSecurityNumber.Equals(newCustomer.SocialSecurityNumber)))
             {
-                PopupHandler.DisplayError($"Customer with same SSN already exists.");
-                return;
+                DisplayError($"Customer with same SSN already exists.");
+                return false;
             }
 
-            BankViewModel.Customers.Add(newCustomer);
-
-            PopupHandler.DisplaySuccess("Added customer",
-                $"{newCustomer.FirstName} {newCustomer.LastName} has been added successfully.");
-
-            ClearForm();
+            return true;
         }
 
         private void ClearForm()
