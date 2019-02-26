@@ -118,9 +118,9 @@ namespace Uppgift2.ViewModels
             ClearForm();
         }
 
-        private bool IsCustomerValid(Customer newCustomer)
+        private bool IsCustomerValid(Customer customer)
         {
-            var validationErrors = new CustomerValidator().Validate(newCustomer);
+            var validationErrors = new CustomerValidator().Validate(customer);
 
             if (validationErrors.Count > 0)
             {
@@ -128,7 +128,7 @@ namespace Uppgift2.ViewModels
                 return false;
             }
 
-            if (BankViewModel.Customers.Any(c => c.SocialSecurityNumber.Equals(newCustomer.SocialSecurityNumber)))
+            if (BankViewModel.Customers.Any(c => c.SocialSecurityNumber.Equals(customer.SocialSecurityNumber)))
             {
                 DisplayError($"Customer with same SSN already exists.");
                 return false;
