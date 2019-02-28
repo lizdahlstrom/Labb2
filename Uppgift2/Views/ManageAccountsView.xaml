@@ -12,7 +12,6 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -87,7 +86,6 @@
                                 Grid.Column="1" Grid.Row="1" Width="100" HorizontalAlignment="Right" />
                     </Grid>
                 </materialDesign:Card>
-
             </Grid>
         </materialDesign:Card>
 
@@ -159,7 +157,6 @@
                         </StackPanel>
                     </Grid>
                 </materialDesign:Card>
-
 
                 <!--Account management-->
                 <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">

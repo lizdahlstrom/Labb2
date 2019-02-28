@@ -112,15 +112,6 @@
     <Compile Include="ViewModels\AddNewCustomerViewModel.cs" />
     <Compile Include="ViewModels\BankViewModel.cs" />
     <Compile Include="ViewModels\ManageAccountsViewModel.cs" />
-    <Compile Include="Views\AddNewCustomerView.xaml.cs">
-      <DependentUpon>AddNewCustomerView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BankView.xaml.cs">
-      <DependentUpon>BankView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ManageAccountsView.xaml.cs">
-      <DependentUpon>ManageAccountsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Accounts\Transaction.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
