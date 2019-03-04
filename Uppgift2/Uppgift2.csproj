@@ -39,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
@@ -104,9 +106,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Static\AccountType.cs" />
     <Compile Include="Static\PopupHandler.cs" />
+    <Compile Include="Static\TransactionType.cs" />
     <Compile Include="Validation\AddressValidator.cs" />
-    <Compile Include="Static\Globals.cs" />
+    <Compile Include="Static\Constants.cs" />
     <Compile Include="Validation\CustomerValidator.cs" />
     <Compile Include="Models\Customer\Address.cs" />
     <Compile Include="ViewModels\AddNewCustomerViewModel.cs" />

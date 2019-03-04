@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Uppgift2.Accounts;
 using Uppgift2.Static;
 
@@ -175,7 +176,7 @@ namespace Uppgift2.ViewModels
 
             do
             {
-                accountId = Globals.GenerateAccountId();
+                accountId = GenerateAccountId();
             } while (IsIdExistent());
 
             bool IsIdExistent()
@@ -184,6 +185,25 @@ namespace Uppgift2.ViewModels
             }
 
             return accountId;
+        }
+
+        private static string GenerateAccountId()
+        {
+            var r = new Random();
+
+            string GetString(int length)
+            {
+                var sb = new StringBuilder();
+
+                for (var i = 0; i < length; i++)
+                {
+                    sb.Append(r.Next(0, 10));
+                }
+
+                return sb.ToString();
+            }
+
+            return $"{Constants.ClearingNumber}-{GetString(4)} {GetString(4)} {GetString(2)}";
         }
     }
 }

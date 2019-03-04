@@ -1,5 +1,6 @@
 ﻿using System;
 using Uppgift2.Static;
+using static Uppgift2.Static.Constants;
 
 namespace Uppgift2.Accounts
 {
@@ -20,9 +21,9 @@ namespace Uppgift2.Accounts
 
         public override string ToString()
         {
-            var str = $"{Date:yyyy-MM-dd}      {Amount}kr ({TransactionType})";
+            var str = $"{Date:yyyy-MM-dd}      {Amount}{LocalCurrencyAbbr} ({TransactionType})";
 
-            return Fee <= 0 ? str : $"{str}   (Fee paid: {Fee}kr)";
+            return Fee <= 0 ? str : $"{str}   (Fee paid: {Fee}{LocalCurrencyAbbr})";
         }
     }
 }
