@@ -1,4 +1,4 @@
-﻿namespace Uppgift2.Static
+﻿namespace Uppgift2.Datatypes
 {
     public enum TransactionType
     {

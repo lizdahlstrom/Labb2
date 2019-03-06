@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Uppgift2.Accounts;
+using Uppgift2.Datatypes;
 using Uppgift2.Static;
 
-namespace Uppgift2
+namespace Uppgift2.Models.Accounts
 {
     [Serializable]
     public abstract class BankAccount

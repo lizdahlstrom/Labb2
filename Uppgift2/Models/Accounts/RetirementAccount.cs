@@ -1,8 +1,8 @@
 ﻿using System;
-using Uppgift2.Accounts;
+using Uppgift2.Datatypes;
 using Uppgift2.Static;
 
-namespace Uppgift2
+namespace Uppgift2.Models.Accounts
 {
     [Serializable]
     public class RetirementAccount : BankAccount

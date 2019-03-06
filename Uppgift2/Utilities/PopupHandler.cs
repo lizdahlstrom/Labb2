@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 
-namespace Uppgift2.Static
+namespace Uppgift2.Utilities
 {
     static class PopupHandler
     {

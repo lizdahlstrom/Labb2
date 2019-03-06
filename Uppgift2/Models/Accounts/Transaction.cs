@@ -1,8 +1,9 @@
 ﻿using System;
+using Uppgift2.Datatypes;
 using Uppgift2.Static;
-using static Uppgift2.Static.Constants;
+using Uppgift2.Utilities;
 
-namespace Uppgift2.Accounts
+namespace Uppgift2.Models.Accounts
 {
     [Serializable]
     public class Transaction
@@ -21,9 +22,9 @@ namespace Uppgift2.Accounts
 
         public override string ToString()
         {
-            var str = $"{Date:yyyy-MM-dd}      {Amount}{LocalCurrencyAbbr} ({TransactionType})";
+            var str = $"{Date:yyyy-MM-dd}      {Amount}{GeneralSettings.CurrencyAbbreviation} ({TransactionType})";
 
-            return Fee <= 0 ? str : $"{str}   (Fee paid: {Fee}{LocalCurrencyAbbr})";
+            return Fee <= 0 ? str : $"{str}   (Fee paid: {Fee}{GeneralSettings.CurrencyAbbreviation})";
         }
     }
 }

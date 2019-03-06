@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Uppgift2
+namespace Uppgift2.Utilities
 {
     static class FileOperations
     {
