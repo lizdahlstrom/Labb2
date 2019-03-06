@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Uppgift2.Datatypes;
 using Uppgift2.Models.Accounts;
-using Uppgift2.Static;
 
 namespace Uppgift2
 {

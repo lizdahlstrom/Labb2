@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Uppgift2.Datatypes;
-using Uppgift2.Static;
 
 namespace Uppgift2.Models.Accounts
 {

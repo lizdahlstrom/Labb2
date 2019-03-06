@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Uppgift2.Static
+namespace Uppgift2.Validation
 {
     class CustomerValidator
     {

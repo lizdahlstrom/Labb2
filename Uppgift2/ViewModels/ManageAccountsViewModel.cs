@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using Uppgift2.Datatypes;
 using Uppgift2.Models.Accounts;
-using Uppgift2.Static;
+
 using static Uppgift2.Utilities.GeneralSettings;
 
 namespace Uppgift2.ViewModels
