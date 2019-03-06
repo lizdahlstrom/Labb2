@@ -8,7 +8,7 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d">
     <Grid>
-        <materialDesign:Card Padding="16,20" Margin="16,0,0,0" Height="328">
+        <materialDesign:Card Padding="16,20" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />

@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <!--Select Customer-->
-        <materialDesign:Card Padding="16, 20" Margin="0,0,16,16" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <materialDesign:Card MinHeight="340" Padding="16, 20" Margin="0,0,16,16" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
