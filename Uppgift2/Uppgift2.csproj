@@ -68,6 +68,7 @@
       <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -106,9 +107,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Static\AccountType.cs" />
-    <Compile Include="Static\PopupHandler.cs" />
-    <Compile Include="Static\TransactionType.cs" />
+    <Compile Include="Datatypes\AccountType.cs" />
+    <Compile Include="Utilities\PopupHandler.cs" />
+    <Compile Include="Datatypes\TransactionType.cs" />
+    <Compile Include="Utilities\GeneralSettings.cs" />
     <Compile Include="Validation\AddressValidator.cs" />
     <Compile Include="Static\Constants.cs" />
     <Compile Include="Validation\CustomerValidator.cs" />
@@ -123,7 +125,7 @@
     </Compile>
     <Compile Include="Models\Accounts\BankAccount.cs" />
     <Compile Include="Models\Customer\Customer.cs" />
-    <Compile Include="Static\FileOperations.cs" />
+    <Compile Include="Utilities\FileOperations.cs" />
     <Page Include="Views\AddNewCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,7 +147,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

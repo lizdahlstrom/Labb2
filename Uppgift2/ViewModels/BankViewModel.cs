@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using static Uppgift2.Static.Constants;
+using Uppgift2.Utilities;
+using static Uppgift2.Utilities.GeneralSettings;
 
 namespace Uppgift2.ViewModels
 {

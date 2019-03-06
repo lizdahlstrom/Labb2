@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Uppgift2.Accounts;
+using Uppgift2.Datatypes;
+using Uppgift2.Models.Accounts;
 using Uppgift2.Static;
+using static Uppgift2.Utilities.GeneralSettings;
 
 namespace Uppgift2.ViewModels
 {
@@ -21,7 +23,7 @@ namespace Uppgift2.ViewModels
         public BankViewModel BankViewModel { get; }
         public IReadOnlyList<AccountType> AccountType { get; }
         public IReadOnlyList<TransactionType> TransactionType { get; }
-        public TransactionType SelectedTransactionType { get; set; } = Static.TransactionType.Deposit;
+        public TransactionType SelectedTransactionType { get; set; } = Datatypes.TransactionType.Deposit;
 
         public Customer SelectedCustomer
         {
@@ -112,7 +114,7 @@ namespace Uppgift2.ViewModels
 
             AccountType = Enum.GetValues(typeof(AccountType)) as AccountType[];
             TransactionType = Enum.GetValues(typeof(TransactionType)) as TransactionType[];
-            SelectedAccountType = Static.AccountType.Checking;
+            SelectedAccountType = Datatypes.AccountType.Checking;
 
             Accounts = new BindableCollection<BankAccount>();
             Transactions = new BindableCollection<Transaction>();
@@ -151,10 +153,10 @@ namespace Uppgift2.ViewModels
         {
             switch (SelectedTransactionType)
             {
-                case Static.TransactionType.Withdrawal:
+                case Datatypes.TransactionType.Withdrawal:
                     SelectedAccount.WithDraw(TransactionAmount);
                     break;
-                case Static.TransactionType.Deposit:
+                case Datatypes.TransactionType.Deposit:
                     SelectedAccount.Deposit(TransactionAmount);
                     break;
             }
@@ -203,7 +205,7 @@ namespace Uppgift2.ViewModels
                 return sb.ToString();
             }
 
-            return $"{Constants.ClearingNumber}-{GetString(4)} {GetString(4)} {GetString(2)}";
+            return $"{ClearingNumber}-{GetString(4)} {GetString(4)} {GetString(2)}";
         }
     }
 }

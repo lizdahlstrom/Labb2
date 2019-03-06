@@ -1,7 +1,7 @@
 ﻿using Caliburn.Micro;
 using System.Linq;
 using Uppgift2.Static;
-using static Uppgift2.Static.PopupHandler;
+using static Uppgift2.Utilities.PopupHandler;
 
 namespace Uppgift2.ViewModels
 {
