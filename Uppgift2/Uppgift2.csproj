@@ -112,7 +112,6 @@
     <Compile Include="Datatypes\TransactionType.cs" />
     <Compile Include="Utilities\GeneralSettings.cs" />
     <Compile Include="Validation\AddressValidator.cs" />
-    <Compile Include="Static\Constants.cs" />
     <Compile Include="Validation\CustomerValidator.cs" />
     <Compile Include="Models\Customer\Address.cs" />
     <Compile Include="ViewModels\AddNewCustomerViewModel.cs" />
