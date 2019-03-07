@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Uppgift2
+namespace Uppgift2.Models.Customer
 {
     [Serializable]
     public class Address

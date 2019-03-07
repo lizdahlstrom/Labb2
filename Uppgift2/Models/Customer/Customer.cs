@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Uppgift2.Datatypes;
 using Uppgift2.Models.Accounts;
 
-namespace Uppgift2
+namespace Uppgift2.Models.Customer
 {
     [Serializable]
     public class Customer

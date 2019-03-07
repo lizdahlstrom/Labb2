@@ -13,15 +13,16 @@ namespace Uppgift2.Models.Accounts
 
         public CheckingAccount(string id, double creditLimit = DefaultCredit) : base(id) => CreditLimit = creditLimit;
 
-        public override void WithDraw(double amount)
+        public override bool WithDraw(double amount)
         {
             var isCreditSufficient = Balance < 0 && CreditBalance >= amount;
             var isTotalBalanceSufficient = (Balance + CreditBalance) >= amount;
 
-            if (!isTotalBalanceSufficient && !isCreditSufficient) return;
+            if (!isTotalBalanceSufficient && !isCreditSufficient) return false;
 
             Balance -= amount;
             AddTransaction(new Transaction(-amount));
+            return true;
         }
     }
 }

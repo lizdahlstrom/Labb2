@@ -20,11 +20,12 @@ namespace Uppgift2.Models.Accounts
             AddTransaction(new Transaction(amount));
         }
 
-        public virtual void WithDraw(double amount)
+        public virtual bool WithDraw(double amount)
         {
-            if (!(Balance - amount >= 0)) return;
+            if (!(Balance - amount >= 0)) return false;
             Balance -= amount;
             AddTransaction(new Transaction(-amount));
+            return true;
         }
 
         protected void AddTransaction(Transaction transaction)

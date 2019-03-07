@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using System.Linq;
 using Uppgift2.Datatypes;
+using Uppgift2.Models.Customer;
 using Uppgift2.Validation;
 using static Uppgift2.Utilities.PopupHandler;
 

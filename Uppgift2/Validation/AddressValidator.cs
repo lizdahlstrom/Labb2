@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Uppgift2.Models.Customer;
 
 namespace Uppgift2.Validation
 {
-    class AddressValidator
+    public class AddressValidator
     {
         private Address address;
         private List<string> invalidMessages;

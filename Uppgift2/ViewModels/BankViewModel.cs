@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Uppgift2.Models.Customer;
 using Uppgift2.Utilities;
 using static Uppgift2.Utilities.GeneralSettings;
 

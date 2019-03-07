@@ -13,14 +13,15 @@ namespace Uppgift2.Models.Accounts
 
         public RetirementAccount(string id) : base(id) { }
 
-        public override void WithDraw(double amount)
+        public override bool WithDraw(double amount)
         {
             var fee = CalculateFee(amount);
             var amountWithFee = amount + fee;
 
-            if (!(Balance - amountWithFee >= 0)) return;
+            if (!(Balance - amountWithFee >= 0)) return false;
             Balance -= amountWithFee;
             AddTransaction(new Transaction(-amount, fee));
+            return true;
         }
 
         private double CalculateFee(double amount) => amount * withdrawalFeePercentage;
