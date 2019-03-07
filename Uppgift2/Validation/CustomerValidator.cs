@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Uppgift2.Models.Customer;
 
 namespace Uppgift2.Validation
 {
-    class CustomerValidator
+   public class CustomerValidator
     {
         private Customer customer;
         private List<string> Violations;
@@ -38,13 +39,13 @@ namespace Uppgift2.Validation
 
         private void ValidateName(string propertyName, string name) // only non-letters, symbols etc are discriminated..
         {
-            if (!name.All(char.IsLetter))
-            {
-                Violations.Add($"{propertyName} can only contain letters.");
-            }
-            else if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name))
             {
                 Violations.Add($"{propertyName} cannot be empty.");
+            }
+            else if (!name.All(char.IsLetter))
+            {
+                Violations.Add($"{propertyName} can only contain letters.");
             }
         }
 
