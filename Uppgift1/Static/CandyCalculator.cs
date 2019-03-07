@@ -4,7 +4,7 @@ using Uppgift1.Models;
 
 namespace Uppgift1
 {
-    static class CandyCalculator
+    public static class CandyCalculator
     {
         public static List<PersonModel> DistributeCandies(List<PersonModel> people, int numCandies)
         {
