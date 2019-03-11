@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelsTests\AccountFactoryTests.cs" />
     <Compile Include="ModelsTests\CheckingAccountTests.cs" />
     <Compile Include="ConvertersTests\CreditVisibilityConverterTests.cs" />
     <Compile Include="ConvertersTests\NullVisibilityConverterTests.cs" />
