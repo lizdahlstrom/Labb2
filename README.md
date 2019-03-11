@@ -1,10 +1,12 @@
 # Labb2
 Uni laboration in C# WPF which I refactored to MVVM using Caliburn.Micro.
+Added unit tests.
 
 This project uses
  - WPF
  - Caliburn Micro
  - Material Design In XAML (Uppgift 2)
+ - Tests with xUnit
 
 ## Uppgift 1 : Candy Distributor
 Distributes candies among a set of people that the user enters.
