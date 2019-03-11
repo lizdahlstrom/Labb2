@@ -41,9 +41,10 @@ namespace Uppgift2.ViewModels
 
         public BindableCollection<BankAccount> Accounts
         {
-            get => _accounts;
+            get => _accounts ?? (_accounts = new BindableCollection<BankAccount>());
             set
             {
+                
                 _accounts = value;
                 NotifyOfPropertyChange(() => Accounts);
                 NotifyOfPropertyChange(() => CanMakeTransaction);
@@ -88,7 +89,11 @@ namespace Uppgift2.ViewModels
 
         public BindableCollection<Transaction> Transactions
         {
-            get => new BindableCollection<Transaction>(_transactions.OrderByDescending(t => t.Date));
+            get
+            {
+                if (_transactions == null) _transactions = new BindableCollection<Transaction>();
+                return new BindableCollection<Transaction>(_transactions.OrderByDescending(t => t.Date));
+            }
             set
             {
                 _transactions = value;
@@ -115,9 +120,6 @@ namespace Uppgift2.ViewModels
             AccountType = Enum.GetValues(typeof(AccountType)) as AccountType[];
             TransactionType = Enum.GetValues(typeof(TransactionType)) as TransactionType[];
             SelectedAccountType = Datatypes.AccountType.Checking;
-
-            Accounts = new BindableCollection<BankAccount>();
-            Transactions = new BindableCollection<Transaction>();
         }
 
         public bool CanAddAccount => SelectedCustomer != null;
@@ -125,15 +127,11 @@ namespace Uppgift2.ViewModels
         public void AddAccount()
         {
             var accountId = GetUniqueAccountId();
+            var accountFactory = new AccountFactory();
 
-            if (AccountCredit > 0)
-            {
-                SelectedCustomer.OpenAccount(SelectedAccountType, AccountCredit, accountId);
-            }
-            else
-            {
-                SelectedCustomer.OpenAccount(SelectedAccountType, accountId);
-            }
+            SelectedCustomer.OpenAccount(AccountCredit > 0
+                ? accountFactory.CreateCheckingAccountWithCredit(accountId, AccountCredit)
+                : accountFactory.CreateAccount(SelectedAccountType, accountId));
 
             AccountCredit = 0;
             Accounts = new BindableCollection<BankAccount>(SelectedCustomer.Accounts);
