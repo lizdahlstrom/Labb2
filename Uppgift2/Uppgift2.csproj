@@ -95,7 +95,6 @@
     <Compile Include="Converters\NullVisibilityConverter.cs" />
     <Compile Include="Models\Accounts\AccountFactory.cs" />
     <Compile Include="Models\Accounts\CheckingAccount.cs" />
-    <Compile Include="Models\Accounts\Interfaces\IAccountFactory.cs" />
     <Compile Include="Models\Accounts\RetirementAccount.cs" />
     <Compile Include="Models\Accounts\SavingsAccount.cs" />
     <Compile Include="Bootstrapper.cs" />

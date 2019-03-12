@@ -1,29 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Uppgift2.Datatypes;
-using Uppgift2.Models.Accounts.Interfaces;
+
 
 namespace Uppgift2.Models.Accounts
 {
-    public class AccountFactory : IAccountFactory
+    public class AccountFactory
     {
         /// <summary>
-        /// Will throw InvalidEnumArgumentException if AccountType is invalid
+        /// Creates account based on accountType
         /// </summary>
         /// <param name="accountType"></param>
         /// <param name="id"></param>
+        /// <exception>Will throw InvalidEnumArgumentException if AccountType is invalid</exception>
         public BankAccount CreateAccount(AccountType accountType, string id)
         {
-            if(string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(id))
                 throw new ArgumentException();
 
             switch (accountType)
             {
-                case (AccountType.Checking):
+                case AccountType.Checking:
                     return new CheckingAccount(id);
                 case AccountType.Retirement:
                     return new RetirementAccount(id);
@@ -36,7 +33,7 @@ namespace Uppgift2.Models.Accounts
 
         public CheckingAccount CreateCheckingAccountWithCredit(string id, double credit)
         {
-               return new CheckingAccount(id, credit);
+            return new CheckingAccount(id, credit);
         }
     }
 }
