@@ -91,7 +91,7 @@ namespace Uppgift2.ViewModels
         {
             get
             {
-                if (_transactions == null) _transactions = new BindableCollection<Transaction>();
+                if (_transactions == null) return _transactions = new BindableCollection<Transaction>();
                 return new BindableCollection<Transaction>(_transactions.OrderByDescending(t => t.Date));
             }
             set
