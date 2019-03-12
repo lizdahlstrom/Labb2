@@ -29,5 +29,31 @@ namespace Uppgift2.Tests.ModelsTests
 
             Assert.True(account.WithDraw(1));
         }
+
+        [Fact]
+        public static void IsCreditSufficientTest()
+        {
+            var account = new CheckingAccount("123", 3);
+
+            Assert.True(account.IsCreditSufficient(1));
+            Assert.False(account.IsCreditSufficient(4));
+        }
+
+        [Fact]
+        public static void IsTotalBalanceSufficient_ShouldReturnFalse()
+        {
+            var account = new CheckingAccount("123",0);
+
+            Assert.False(account.IsTotalBalanceSufficient(2));
+        }
+
+        [Fact]
+        public static void IsTotalBalanceSufficient_ShouldReturnTrue()
+        {
+            var account = new CheckingAccount("123");
+            account.Deposit(3);
+
+            Assert.True(account.IsTotalBalanceSufficient(2));
+        }
     }
 }

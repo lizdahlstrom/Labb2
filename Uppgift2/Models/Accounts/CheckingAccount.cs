@@ -15,14 +15,21 @@ namespace Uppgift2.Models.Accounts
 
         public override bool WithDraw(double amount)
         {
-            var isCreditSufficient = Balance < 0 && CreditBalance >= amount;
-            var isTotalBalanceSufficient = (Balance + CreditBalance) >= amount;
-
-            if (!isTotalBalanceSufficient && !isCreditSufficient) return false;
+            if (!IsTotalBalanceSufficient(amount) && !IsCreditSufficient(amount)) return false;
 
             Balance -= amount;
             AddTransaction(new Transaction(-amount));
             return true;
+        }
+
+        public bool IsCreditSufficient(double amountToWithdraw)
+        {
+            return Balance <= 0 && CreditBalance >= amountToWithdraw;
+        }
+
+        public bool IsTotalBalanceSufficient(double amountToWithdraw)
+        {
+            return (Balance + CreditBalance) >= amountToWithdraw;
         }
     }
 }
